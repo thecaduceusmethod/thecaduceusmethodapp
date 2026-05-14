@@ -33,7 +33,7 @@ const FREQ_CATEGORIES = [
       {hz:117.3, label:"Pancreas",      desc:"Sweetness in life, balance."},
       {hz:164.3, label:"Gall Bladder",  desc:"Decision making, assertiveness."},
       {hz:176,   label:"Colon",         desc:"Release, elimination, stored trauma."},
-      {hz:200,   label:"Collagen",      desc:"Stimulates collagen production, skin rejuvenation and tissue repair."},
+      {hz:200,   label:"Collagen",      desc:"Skin rejuvenation and tissue repair."},
       {hz:220,   label:"Lungs",         desc:"Grief, sadness, breathing life fully."},
       {hz:281,   label:"Intestines",    desc:"Gut instincts, digestion, assimilation."},
       {hz:295.8, label:"Fat Cells",     desc:"Storage, protection, metabolism."},
@@ -45,11 +45,11 @@ const FREQ_CATEGORIES = [
       {hz:352,   label:"Bladder",       desc:"Holding on, letting go, fluid balance."},
       {hz:418.3, label:"Bone",          desc:"Foundation, support, stability."},
       {hz:492.8, label:"Adrenals",      desc:"Stress, fear, fight-or-flight response."},
-      {hz:528,   label:"528 — Nervous/Endocrine", desc:"Reducing cortisol, increasing oxytocin. Supports cellular health and transition from survival to relaxed state."},
+      {hz:528,   label:"528 — Nervous/Endocrine", desc:"Increasing oxytocin. Supports cellular health and transition from survival to relaxed state."},
       {hz:537.8, label:"537.8 — Cytosine", desc:"Influences emotional and ancestral memory retention."},
       {hz:543.4, label:"543.4 — Thymine",  desc:"Supports cellular stability and deep-rooted energy patterns."},
       {hz:545.6, label:"545.6 — Adenine",  desc:"Aids in genetic reprogramming and releasing inherited blocks."},
-      {hz:550,   label:"550 — Guanine",    desc:"Enhances DNA activation and transformation."},
+      {hz:550,   label:"550 — Guanine",    desc:"Supports transformation and cellular resilience."},
     ]
   },
   {
@@ -99,7 +99,7 @@ const METHOD_CONFIGS = [
     dest:"practice",
     destLabel:"Open Practice",
     steps:[
-      "Vibroacoustic Thereapy, also known as "Bone Conduction", utilizes your skeletal system to carry the frequency.  Explained in detail page 14 of The Caduceus Method Book.  After choosing a frequency, place a small speaker or your phone speaker against your sternum, chin, jaw, elbow, knee, or other areas with thin skin and easy skeletal access.",
+      "Vibroacoustic Thereapy, also known as \"Bone Conduction\", utilizes your skeletal system to carry the frequency.  Explained in detail page 14 of The Caduceus Method Book.  After choosing a frequency, place a small speaker or your phone speaker against your sternum, chin, jaw, elbow, knee, or other areas with thin skin and easy skeletal access.",
       "You may also use your finger to place pressure on the tragus (the small flap in front of the ear hole) to better feel sound vibrations and match your hum.",
       "Follow the same inhale · hold · hum · hold cycle as Method I.",
     ],
@@ -230,7 +230,7 @@ function Adj({onClick,label}){
 
 function Accordion({open,onToggle,header,children}){
   return(
-    <div style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.09)",
+    <div style={{background:"rgba(255,255,255,0.025)",border:"1px solid rgba(255,255,255,0.05)",
       borderRadius:13,marginBottom:"0.8rem",overflow:"hidden"}}>
       <button onClick={onToggle} style={{width:"100%",padding:"0.95rem 1.15rem",background:"transparent",
         border:"none",color:"#e8e0d0",cursor:"pointer",display:"flex",justifyContent:"space-between",
@@ -251,7 +251,7 @@ function GlowBtn({onClick,label,accent,full}){
       style={{
         width:full?"100%":"auto",
         padding:"0.55rem 1.5rem",borderRadius:"2rem",cursor:"pointer",
-        background:h?`rgba(255,255,255,0.08)`:"rgba(255,255,255,0.04)",
+        background:h?`rgba(255,255,255,0.08)`:"rgba(255,255,255,0.03)",
         border:`1px solid ${h?ac:`${ac}60`}`,
         color:h?"#fff":ac,
         fontFamily:"'Cinzel',serif",fontSize:"0.72rem",letterSpacing:"0.14em",
@@ -404,7 +404,7 @@ function Home({navigate}){
       <div style={{marginBottom:"2rem"}}>
         <div style={{position:"relative",borderRadius:18,overflow:"hidden",
           boxShadow:"0 0 60px rgba(200,150,255,0.25),0 0 120px rgba(255,195,60,0.12)"}}>
-          <img src={IMG.hero} alt="The Caduceus Method" style={{width:"100%",display:"block"}}/>
+          <img src={IMG.hero} alt="The Caduceus Method hero illustration" style={{width:"100%",display:"block"}}/>
           <div style={{position:"absolute",inset:0,pointerEvents:"none",
             background:"linear-gradient(to bottom,rgba(8,12,24,0.25) 0%,transparent 20%,transparent 55%,rgba(8,12,24,0.75) 85%,rgba(8,12,24,0.95) 100%)"}}/>
           <div style={{position:"absolute",bottom:0,left:0,right:0,padding:"1.5rem 1.25rem 1.75rem",textAlign:"center"}}>
@@ -440,7 +440,7 @@ function Home({navigate}){
       </div>
 
       {/* Intro text */}
-      <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)",
+      <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.05)",
         borderRadius:15,padding:"1.85rem",marginBottom:"2.5rem"}}>
         <p style={{fontSize:"clamp(0.9rem,2.5vw,1.05rem)",lineHeight:2,color:"#f0ead8",
           marginBottom:"1.1rem",textShadow:GOLD_SOFT}}>
@@ -541,8 +541,8 @@ function FreqLibrary({freq,setFreq,onBreathingChange}){
       <div style={{display:"flex",justifyContent:"center",gap:"0.5rem",marginBottom:"1.25rem",flexWrap:"wrap"}}>
         {FREQ_CATEGORIES.map(c=>(
           <button key={c.id} onClick={()=>setCat(c.id)}
-            style={{background:cat===c.id?"rgba(200,160,255,0.13)":"rgba(255,255,255,0.03)",
-              border:`1px solid ${cat===c.id?"rgba(200,160,255,0.55)":"rgba(255,255,255,0.1)"}`,
+            style={{background:cat===c.id?"rgba(200,160,255,0.13)":"rgba(255,255,255,0.02)",
+              border:`1px solid ${cat===c.id?"rgba(200,160,255,0.55)":"rgba(255,255,255,0.08)"}`,
               color:cat===c.id?PURPLE:"rgba(255,255,255,0.55)",
               padding:"0.35rem 1rem",borderRadius:"2rem",fontFamily:"'Cinzel',serif",
               fontSize:"0.65rem",letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",
@@ -582,8 +582,8 @@ function FreqLibrary({freq,setFreq,onBreathingChange}){
             onMouseEnter={()=>setHovered(f.hz)}
             onMouseLeave={()=>setHovered(null)}
             style={{
-              background:freq===f.hz?"rgba(206,147,216,0.15)":hovered===f.hz?"rgba(255,255,255,0.05)":"rgba(255,255,255,0.03)",
-              border:`1px solid ${freq===f.hz?"rgba(206,147,216,0.6)":hovered===f.hz?"rgba(255,255,255,0.2)":"rgba(255,255,255,0.08)"}`,
+              background:freq===f.hz?"rgba(206,147,216,0.15)":hovered===f.hz?"rgba(255,255,255,0.03)":"rgba(255,255,255,0.02)",
+              border:`1px solid ${freq===f.hz?"rgba(206,147,216,0.6)":hovered===f.hz?"rgba(255,255,255,0.15)":"rgba(255,255,255,0.05)"}`,
               borderRadius:10,
               padding:cat==="organ"?"0.6rem 0.35rem":"0.8rem 1rem",
               cursor:"pointer",
@@ -665,12 +665,12 @@ function Practice({onSessionLog}){
       </div>
 
       {mode==="custom"&&!bc&&(
-        <div style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",
+        <div style={{background:"rgba(255,255,255,0.025)",border:"1px solid rgba(255,255,255,0.05)",
           borderRadius:13,padding:"1.15rem",marginBottom:"1rem",display:"flex",justifyContent:"center",gap:"2.5rem"}}>
           {[["inhale","Inhale"],["hum","Hum"]].map(([k,l])=>(
             <div key={k} style={{textAlign:"center"}}>
-              <div style={{fontSize:"0.72rem",letterSpacing:"0.1em",color:"rgba(255,255,255,0.5)",
-                textTransform:"uppercase",marginBottom:"0.35rem"}}>{l}</div>
+              <div style={{fontSize:"0.72rem",letterSpacing:"0.06em",color:"rgba(255,255,255,0.65)",
+                textTransform:"none",marginBottom:"0.35rem"}}>{l}</div>
               <div style={{display:"flex",alignItems:"center",gap:"0.5rem"}}>
                 <Adj onClick={()=>setCust(c=>({...c,[k]:Math.max(2,c[k]-1)}))} label="−"/>
                 <span style={{fontSize:"1.15rem",minWidth:32,textAlign:"center"}}>{cust[k]}s</span>
@@ -866,27 +866,27 @@ function Tracker({sessions,onLog}){
           {icon:"🔥",val:String(uniqueDays),label:"Day Streak"},
           {icon:"↗",val:String(sessions.length),label:"Sessions"},
         ].map(({icon,val,label})=>(
-          <div key={label} style={{background:"rgba(255,255,255,0.04)",
-            border:"1px solid rgba(255,255,255,0.08)",borderRadius:13,
+          <div key={label} style={{background:"rgba(255,255,255,0.025)",
+            border:"1px solid rgba(255,255,255,0.05)",borderRadius:13,
             padding:"1.1rem 0.5rem",textAlign:"center"}}>
             <div style={{fontSize:"1.4rem",marginBottom:"0.4rem"}}>{icon}</div>
             <div style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(1rem,3vw,1.4rem)",
               color:"#f0ead8",textShadow:GOLD_SOFT,marginBottom:"0.2rem"}}>{val}</div>
-            <div style={{fontSize:"0.65rem",letterSpacing:"0.12em",textTransform:"uppercase",
-              color:"rgba(255,255,255,0.4)"}}>{label}</div>
+            <div style={{fontSize:"0.65rem",letterSpacing:"0.04em",textTransform:"none",
+              color:"rgba(255,255,255,0.72)"}}>{label}</div>
           </div>
         ))}
       </div>
 
       <button onClick={()=>setShowForm(o=>!o)}
         style={{width:"100%",padding:"0.95rem",marginBottom:"1.5rem",
-          background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.15)",
-          borderRadius:13,color:"rgba(255,255,255,0.85)",fontFamily:"'Cinzel',serif",
+          background:"rgba(255,255,255,0.025)",border:"1px solid rgba(255,255,255,0.06)",
+          borderRadius:13,color:"rgba(255,255,255,0.9)",fontFamily:"'Cinzel',serif",
           fontSize:"0.82rem",letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>
         + Log a Session</button>
 
       {showForm&&(
-        <div style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.09)",
+        <div style={{background:"rgba(255,255,255,0.025)",border:"1px solid rgba(255,255,255,0.05)",
           borderRadius:14,padding:"1.35rem",marginBottom:"1.5rem"}}>
           <div style={{display:"flex",gap:"0.5rem",marginBottom:"0.8rem"}}>
             {["Practice","Heart-Brain","Both"].map(tt=>(
@@ -907,8 +907,8 @@ function Tracker({sessions,onLog}){
           </div>
           <textarea value={note} onChange={e=>setNote(e.target.value)}
             placeholder="How do you feel? What did you notice?" rows={3}
-            style={{width:"100%",background:"rgba(255,255,255,0.04)",
-              border:"1px solid rgba(255,255,255,0.1)",borderRadius:10,color:"#e8e0d0",
+            style={{width:"100%",background:"rgba(255,255,255,0.025)",
+              border:"1px solid rgba(255,255,255,0.06)",borderRadius:10,color:"#e8e0d0",
               padding:"0.7rem",fontSize:"0.9rem",lineHeight:1.75,resize:"vertical",
               outline:"none",fontFamily:"Georgia,serif",boxSizing:"border-box"}}/>
           <button onClick={log} style={{width:"100%",marginTop:"0.75rem",padding:"0.6rem",
@@ -982,13 +982,24 @@ useEffect(() => {
         ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:2px;}
         button{font-family:'Cinzel',serif;}
       `}</style>
-      <div style={{background:BG,minHeight:"100vh",color:"#e8e0d0",fontFamily:"'Cinzel',serif"}}>
+      <div style={{background:BG,minHeight:"100vh",color:"#f0ead8",fontFamily:"'Cinzel',serif"}}>
         <Nav page={page} setPage={setPage}/>
         {page==="home"       &&<Home navigate={navigate}/>}
         {methodConfig        &&<MethodRoom config={methodConfig} navigate={navigate} onSessionLog={handleLog}/>}
         {page==="practice"   &&<Practice onSessionLog={handleLog}/>}
         {page==="heartbrain" &&<HeartBrain onSessionLog={handleLog}/>}
         {page==="tracker"    &&<Tracker sessions={sessions} onLog={handleLog}/>}
+        <div
+          style={{
+            padding: "2rem",
+            textAlign: "center",
+            opacity: 0.7,
+            fontSize: "0.9rem",
+            lineHeight: 1.6,
+          }}
+        >
+          The Caduceus Method is for educational purposes only and is not intended to replace professional medical advice, diagnosis, or treatment.
+        </div>
       </div>
     </>
   );
